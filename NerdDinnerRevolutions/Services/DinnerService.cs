@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Nancy;
 using NerdDinnerRevolutions.Data;
+using Newtonsoft.Json;
 
 namespace NerdDinnerRevolutions.Services
 {
@@ -20,13 +21,7 @@ namespace NerdDinnerRevolutions.Services
 
         private Response CreateDinner()
         {
-            var dinner = new Dinner
-            {
-                Address = Request.Form.Address,
-                EventDate = Request.Form.EventDate,
-                HostedBy = Request.Form.HostedBy,
-                Title = Request.Form.Title
-            };
+            var dinner = JsonConvert.DeserializeObject<Dinner>(Request.Form.model);
             nerdDinners.Dinners.Add(dinner);
             try
             {

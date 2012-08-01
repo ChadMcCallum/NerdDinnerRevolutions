@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dinners </title>
+</head>
+<body>
+    <div id='dinner-list'>
+        <h1>
+            Upcoming Dinners</h1>
+        <ul id="list">
+            <li></li>
+        </ul>
+        <p>
+            <a href="#home/create">Create New Dinner</a>
+        </p>
+    </div>
+    <div id="create-dinner" style='display: none;'>
+        <h1>
+            Create New Dinner</h1>
+        <fieldset>
+            <div class="editor-label">
+                <label for="Title">
+                    Title</label>
+            </div>
+            <div class="editor-field">
+                <input id="Title" name="Title" type="text" value="">
+                <span class="field-validation-valid" id="Title_validationMessage"></span>
+            </div>
+            <div class="editor-label">
+                <label for="EventDate">
+                    EventDate</label>
+            </div>
+            <div class="editor-field">
+                <input id="EventDate" name="EventDate" type="text" value="">
+                <span class="field-validation-valid" id="EventDate_validationMessage"></span>
+            </div>
+            <div class="editor-label">
+                <label for="Address">
+                    Address</label>
+            </div>
+            <div class="editor-field">
+                <input id="Address" name="Address" type="text" value="">
+                <span class="field-validation-valid" id="Address_validationMessage"></span>
+            </div>
+            <div class="editor-label">
+                <label for="HostedBy">
+                    HostedBy</label>
+            </div>
+            <div class="editor-field">
+                <input id="HostedBy" name="HostedBy" type="text" value="">
+                <span class="field-validation-valid" id="HostedBy_validationMessage"></span>
+            </div>
+            <p>
+                <button id='create'>Create</button>
+            </p>
+        </fieldset>
+        <div>
+            <a href="#">Back to Dinners List</a>
+        </div>
+    </div>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type='text/javascript' src="./scripts/lib/underscore.js"></script>
+    <script type='text/javascript' src="./scripts/lib/backbone.js"></script>
+    <script type='text/javascript' src='./scripts/index.js'></script>
+</body>
+</html>
