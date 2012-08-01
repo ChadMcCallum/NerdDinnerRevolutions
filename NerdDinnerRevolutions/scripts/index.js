@@ -1,5 +1,4 @@
 ﻿$().ready(function () {
-    Backbone.emulateJSON = true;
     window.mainView = new Page.MainView();
 });
 

@@ -3,6 +3,7 @@ using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
 using Nancy;
+using Nancy.ModelBinding;
 using NerdDinnerRevolutions.Data;
 using Newtonsoft.Json;
 
@@ -21,7 +22,7 @@ namespace NerdDinnerRevolutions.Services
 
         private Response CreateDinner()
         {
-            var dinner = JsonConvert.DeserializeObject<Dinner>(Request.Form.model);
+            var dinner = this.Bind<Dinner>();
             nerdDinners.Dinners.Add(dinner);
             try
             {
