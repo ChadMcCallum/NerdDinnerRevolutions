@@ -8,7 +8,7 @@ A rework of the NerdDinnerReloaded sln to use Backbone and NancyFx
 ## NancyFX changes
 - Created separated GET and POST endpoints for getting a list of dinners and creating a dinner respectively
 - When getting a list of dinners, EF returns "DynamicProxy" classes which don't serialize to JSON very well because of circular references.  Have to use linq to map results to anonymous types.  Unfortunate but necessary.
-- When creating a new dinner, I'm using Request.Form, which forces me to submit the data as a application/x-www-form-urlencoded, which also requires me to set Backbone.emulateJSON = true in the JS.  Works well though.  Would like to see a Request.Body.AsJson or some clever way of automagically parsing Request.Body. (can be done via extension method)
+- When creating a new dinner, using this.Bind<Dinner>() to automagically bind the JSON we're sending as the request body from the Backbone model to a Dinner object.
 - When creating a new dinner, I left the DataAnnotation attributes on the .Data classes intact, so attempting to save via .SaveChanges can throw DbEntityValidationException messages.  This is where validation will come in the future.  Note how convoluted it is to get the actual validation error messages though
 
 ## Backbone.js changes
